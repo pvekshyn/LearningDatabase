@@ -3,37 +3,37 @@
 internal static class Tokenizer
 {
     private static Dictionary<char, TokenType> reservedSymbols = new Dictionary<char, TokenType>()
-        {
-            { ',', TokenType.Comma },
-            { '(', TokenType.OpenParens },
-            { ')', TokenType.CloseParens },
-            { '*', TokenType.Asterisk },
-            { '=', TokenType.Equal },
-            { '+', TokenType.Plus },
-            { '-', TokenType.Minus },
-            { '>', TokenType.Greater },
-            { '<', TokenType.Less }
-        };
+    {
+        { ',', TokenType.Comma },
+        { '(', TokenType.OpenParens },
+        { ')', TokenType.CloseParens },
+        { '*', TokenType.Asterisk },
+        { '=', TokenType.Equal },
+        { '+', TokenType.Plus },
+        { '-', TokenType.Minus },
+        { '>', TokenType.Greater },
+        { '<', TokenType.Less }
+    };
 
     private static Dictionary<string, TokenType> reservedWords = new Dictionary<string, TokenType>(StringComparer.InvariantCultureIgnoreCase)
-        {
-            { "CREATE", TokenType.Create },
-            { "TABLE", TokenType.Table },
-            { "INDEX", TokenType.Index },
-            { "ON", TokenType.On },
-            { "INSERT", TokenType.Insert },
-            { "INTO", TokenType.Into },
-            { "VALUES", TokenType.Values },
-            { "SELECT", TokenType.Select },
-            { "FROM", TokenType.From },
-            { "DROP", TokenType.Drop },
-            { "WHERE", TokenType.Where },
-            { "ORDER", TokenType.Order },
-            { "BY", TokenType.By },
-            { "AND", TokenType.And },
-            { "OR", TokenType.Or },
-            { "JOIN", TokenType.Join },
-        };
+    {
+        { "CREATE", TokenType.Create },
+        { "TABLE", TokenType.Table },
+        { "INDEX", TokenType.Index },
+        { "ON", TokenType.On },
+        { "INSERT", TokenType.Insert },
+        { "INTO", TokenType.Into },
+        { "VALUES", TokenType.Values },
+        { "SELECT", TokenType.Select },
+        { "FROM", TokenType.From },
+        { "DROP", TokenType.Drop },
+        { "WHERE", TokenType.Where },
+        { "ORDER", TokenType.Order },
+        { "BY", TokenType.By },
+        { "AND", TokenType.And },
+        { "OR", TokenType.Or },
+        { "JOIN", TokenType.Join },
+    };
 
     public static IEnumerable<Token> Tokenize(this string input)
     {

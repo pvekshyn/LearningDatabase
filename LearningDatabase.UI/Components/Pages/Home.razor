@@ -1,0 +1,16 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<EditForm Model="@Sql" OnSubmit="@Submit">
+    <div style="margin-bottom: 10px;">
+        <InputTextArea style="width: 100%;" @bind-Value="Sql" />
+    </div>
+    <button class="btn btn-primary" type="submit">Execute</button>
+</EditForm>
+
+<TabControl>
+    <TabPage Text="AST">
+        <MyDiagram @ref="ASTDiagram" />
+    </TabPage>
+</TabControl>
