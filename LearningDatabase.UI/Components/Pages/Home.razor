@@ -6,6 +6,12 @@
     <div style="margin-bottom: 10px;">
         <InputTextArea style="width: 100%;" @bind-Value="Sql" />
     </div>
+    @if (!string.IsNullOrEmpty(ErrorMessage))
+    {
+        <div class="alert alert-danger mt-3">
+            @ErrorMessage
+        </div>
+    }
     <button class="btn btn-primary" type="submit">Execute</button>
 </EditForm>
 

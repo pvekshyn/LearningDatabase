@@ -58,7 +58,7 @@ internal static class Tokenizer
                     var word when reservedWords.ContainsKey(word) => new Token(reservedWords[word], word),
                     var word => new Token(TokenType.Identifier, word)
                 },
-                _ => throw new NotImplementedException()
+                _ => throw new NotSupportedException()
             };
 
             yield return token;

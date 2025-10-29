@@ -29,8 +29,11 @@ public partial class MyDiagram
     public void AddNodes(ASTNode node)
     {
         Diagram.Nodes.Clear();
-        var selectNode = (SelectASTNode)node;
-        AddNode(selectNode, (selectNode.OutputList.Count + 1) * 100, 0);
+        var selectNode = node as SelectASTNode;
+        if (selectNode is not null)
+        {
+            AddNode(selectNode, (selectNode.OutputList.Count + 1) * 100, 0);
+        }
     }
 
     public NodeModel AddNode(ASTNode node, int x, int y)

@@ -10,6 +10,11 @@ internal static class Parser
 
         return GetNextType(enumerator) switch
         {
+            TokenType.Create => GetNextType(enumerator) switch
+            {
+                TokenType.Table => CreateTableParser.Parse(enumerator),
+                _ => throw new NotSupportedException()
+            },
             TokenType.Select => SelectParser.Parse(enumerator),
             _ => throw new NotSupportedException()
         };
